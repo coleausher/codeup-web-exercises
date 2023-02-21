@@ -76,7 +76,7 @@ function calculateTip(percent, bill){
     return percent * bill;
 
 }
-console.log(calculateTip(0.20, 300));
+console.log(calculateTip(0.20, 200));
 
 /**
  * TODO:
@@ -87,7 +87,7 @@ console.log(calculateTip(0.20, 300));
 
 let billCost = prompt("What was the total for your meal?");
 
-let tipPercent = prompt("What percent would you like to tip?");
+let tipPercent = prompt("What percent would you like to tip? (enter amount as a decimal, example .20)");
 
 let calculateTotal = (billCost * tipPercent);
 
