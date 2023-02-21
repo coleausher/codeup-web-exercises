@@ -112,9 +112,10 @@ console.log(calculateTip(billCost, tipPercent));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(price, discountPercent){
-    return (price - (discountPercent * 100));
-}
-let originalPrice = 100
-let discount = .2
+ function applyDiscount(price, discountPercent){
+     return (price - (discountPercent * 100));
+ }
+ let originalPrice = 100
+ let discount = .2
+
 console.log(applyDiscount(originalPrice, discount));
