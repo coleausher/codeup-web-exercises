@@ -52,4 +52,3 @@ let premiumMember = confirm("Are you a premium member?");
 let offer = (quantityBought >= 2 && offerNotExpired || premiumMember );
 
 alert("The Offer has been applied: " + offer);
-
