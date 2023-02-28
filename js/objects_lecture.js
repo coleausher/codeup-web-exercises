@@ -27,13 +27,13 @@ dog.breed = "pit bull";
 // we are displaying dog breed by referencing property
 console.log(dog.breed);
 // properties are only accessible through your object dog.breed
-// the snippit below will throw me an error because i can not access breed(property) without accessing dog(object) first ex. 'dog.breed'
+// the snippit below will throw me an error because I can not access breed(property) without accessing dog(object) first ex. 'dog.breed'
 // console.log(breed);
 
 
 // ----------------- array notation ----------------
 // the value inside of square brackets will be my property name
-// i must have property name in quotes " " in order to define the property
+// I must have property name in quotes " " in order to define the property
 // declaring / initializing color property for dog object using array notation []
 dog["color"] = "black";
 // re-initializing my property value
