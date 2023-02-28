@@ -14,29 +14,24 @@
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log(names);
+    console.log(names.length);
 
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
-    let index1 = "John"
-    let index2 = "Jacob"
-    let index3 = "Luke"
-    let index4 = "Mike"
-    console.log(index1);
-    console.log(index2);
-    console.log(index3);
-    console.log(index4);
-
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-    for(let i = 0; i <= 3; i++) {
-        let greeter = "Hello " + names[i]
+    for(let i = 0; i <= names.length; i++) {
+        let greeter = names[i]
      console.log(greeter)
     }
 
@@ -47,8 +42,7 @@
      */
 
     names.forEach(function(namesIndex) {
-        let greeter = "Hi " + namesIndex;
-        console.log(greeter)
+        console.log(namesIndex)
     })
 
     /**
@@ -65,16 +59,20 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+function first(array) {
+      return array[0];
 
-        let num1 = [1, 2, 3, 4, 5]
-        console.log("the first index is: " + num1[0]);
+    }
 
+    console.log(first(names))
+function second(array) {
+    return array[1]
+}
 
-        let num2= [1, 2, 3, 4, 5]
-        console.log("the second index is: " + num2[1]);
+    console.log(second(names))
+function last(array) {
+    return array[array.length - 1]
+}
 
-
-        let num3 = [1, 2, 3, 4, 5]
-        console.log("the last index is: " + num3[4]);
-
+    console.log(last(names))
 })();
