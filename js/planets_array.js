@@ -40,7 +40,7 @@
 
 //  // .indexOf finds the index of a item in the array
    let index = planets.indexOf("Earth");
-    console.log(index);
+    console.log("The index of Earth is: " + index);
 
 // // .reverse reverses the array
    let reversePlanets = planets.reverse();
