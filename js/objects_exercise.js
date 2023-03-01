@@ -28,9 +28,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+// something.something  =  method
     person.sayHello = function(){
-        return "Hello " + person.firstName + " " + person.lastName
+        return "Hello from " + person.firstName + " " + person.lastName + "!"
 
     }
     console.log(person.sayHello())
@@ -58,19 +58,33 @@
     let shoppers = [
         {name: 'Cameron', amount: 180}, {name: 'Ryan', amount: 250}, {name: 'George', amount: 320}
     ];
-    function discount(price){
-        if (price >= 200){
-            return price * .12;
+    // function discount(price){
+    //     if (price >= 200){
+    //         return price * .12;
+    //     }else{
+    //         return "No discount"
+    //     }
+    // }
+    //
+    // shoppers.forEach (function(shopper){
+    //     shopper.discount = discount(shopper.amount)
+    //
+    // })
+    // console.log(shoppers)
+
+    shoppers.forEach(function(shopper){
+        let discount;
+        let total;
+        if(shopper.amount > 200){
+            discount = shopper.amount *.12;
+            total = shopper.amount - discount;
+            console.log("Hello " + shopper.name + " your discount was " + discount + ". your new total is $" + total);
+
         }else{
-            return "No discount"
+            console.log("Hello " + shopper.name + "Your total is " + shopper.amount)
         }
-    }
-
-    shoppers.forEach (function(shopper){
-        shopper.discount = discount(shopper.amount)
-
     })
-    console.log(shoppers)
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -92,9 +106,9 @@ let books = [
 
     ]
 
-
-
-
+    console.log(books[0].title)
+    console.log(books[0].author.firstName)
+    console.log(books[0].author.lastName)
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -120,10 +134,17 @@ let books = [
      *      ...
      */
 
-books.forEach(function (book){
-    console.log("Book #" + (books.indexOf(book) + 1) + " Title: " + book.title + " Author: " + book.author.firstName + " " + book.author.lastName )
-    })
+// books.forEach(function (book){
+//     console.log("Book #" + (books.indexOf(book) + 1) + " Title: " + book.title + " Author: " + book.author.firstName + " " + book.author.lastName )
+//     })
 
+
+    for(let i = 0; i < books.length; i++){
+        console.log("Book #" + (i + 1));
+        console.log("Title: " + books[i].title);
+        console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName)
+        console.log("-----")
+    }
 
 
     /**
@@ -137,29 +158,53 @@ books.forEach(function (book){
      *   `showBookInfo` function.
      */
 
-function createBook(title, authorFirstName, authorLastName){
-return{
-    title: title,
-    authorFirstName: authorFirstName,
-    authorLastName: authorLastName
-
-
-}
+// function createBook(title, authorFirstName, authorLastName){
+// return{
+//     title: title,
+//     authorFirstName: authorFirstName,
+//     authorLastName: authorLastName
+//
+//
+// }
+//     }
+//
+//     let book = [createBook("Wow Book", "Cole", "Usher"),
+//                 createBook("Hello Book", "Cole", "Usher"),
+//                 createBook("Goodbye Book", "Cole", "Usher"),
+//                 createBook("The sky Book", "Cole", "Usher"),
+//                 createBook("The ground Book", "Cole", "Usher")
+//     ]
+// function showBookInfo(book){
+//     return ("Book #" + (books.indexOf(book) + 1) + " Title: " + book.title + " Author: " + book.authorFirstName + " " + book.authorLastName )
+//
+// }
+// book.forEach(function(book){
+//     console.log(showBookInfo(book))
+//     })
+    function createBook(title, firstName, lastName){
+        let book = {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
     }
+    let bookArr = [];
+    for(let i = 0; i < books.length; i++){
+        bookArr = [];
+        bookArr.push(createBook(books[i]));
+    }
+    console.log(bookArr)
 
-    let book = [createBook("Wow Book", "Cole", "Usher"),
-                createBook("Hello Book", "Cole", "Usher"),
-                createBook("Goodbye Book", "Cole", "Usher"),
-                createBook("The sky Book", "Cole", "Usher"),
-                createBook("The ground Book", "Cole", "Usher")
-    ]
-function showBookInfo(book){
-    return ("Book #" + (books.indexOf(book) + 1) + " Title: " + book.title + " Author: " + book.authorFirstName + " " + book.authorLastName )
-
-}
-book.forEach(function(book){
-    console.log(showBookInfo(book))
-    })
-
+    function showBookInfo(book, bookNum){
+        console.log("Book #" + bookNum);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName)
+        console.log("-----")
+    }
+    for(let i = 0; i < books.length; i++) {
+    showBookInfo(books[i], (i + 1))
+    }
 })();
 
