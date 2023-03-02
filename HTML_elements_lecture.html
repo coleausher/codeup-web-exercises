@@ -5,39 +5,121 @@
     <title>HTML elements lecture</title>
 </head>
 <body>
-<!-- the <div></div> element is a block element takes up whole width and height (can style the whole block) -->
-  <div id="wrapper" class="content">
-<!-- the <p></p> tag element is the 'child' element of the parent element (<body></body>) (can style the whole paragraph)  -->
-    <p> content </p>
+<!--&lt;!&ndash; the <div></div> element is a block element takes up whole width and height (can style the whole block) &ndash;&gt;-->
+<!--  <div id="wrapper" class="content">-->
+<!--&lt;!&ndash; the <p></p> tag element is the 'child' element of the parent element (<body></body>) (can style the whole paragraph)  &ndash;&gt;-->
+<!--    <p> content </p>-->
 
-    <h1> heading </h1>
+<!--    <h1> heading </h1>-->
 
 
-  </div>
+<!--  </div>-->
 
-<div class="content">
-<!-- inline element gets put inside another element to share the space (can style just the span) -->
-<p> this is a example of
-  <br>
-  <span> inline </span> element </p>
+<!--<div class="content">-->
+<!--&lt;!&ndash; inline element gets put inside another element to share the space (can style just the span) &ndash;&gt;-->
+<!--<p> this is a example of-->
+<!--  <br>-->
+<!--  <span> inline </span> element </p>-->
 
-</div>
+<!--</div>-->
 
-<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41477-019-0374-3/MediaObjects/41477_2019_374_Figa_HTML.jpg" alt="Forest">
+<!-- src (put in image link)  alt (put in image description) -->
+<!--<img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41477-019-0374-3/MediaObjects/41477_2019_374_Figa_HTML.jpg" alt="Forest">-->
+
+<!--<h1>I am the biggest header</h1>-->
+<!--<h2>the second biggest</h2>-->
+<!--<h3>one level smaller</h3>-->
+<!--<h4>smaller than h3</h4>-->
+<!--<h5>smaller than h4</h5>-->
+<!--<h6>smallest header</h6>-->
+<nav>
+<ul>
+    <li>Codeup Java</li>
+    <li>Introduction</li>
+    <li>HTML and CSS</li>
+    <li>JavaScript</li>
+    <li>JQuery</li>
+</ul>
+</nav>
+<main>
+
+<h1>Common HTML Elements</h1>
+<p>While not an exhaustive list, below are some of the most common HTML elements you will use.</p>
+
+
+<h3>Heading</h3>
+
+<!--------------------- Lists ------------------>
+
+<ul>
+    <li>&#60;h1&#62;I am the main heading for the page.&#60;h1&#62;</li>
+    <hr>
+    <li>I am another heading, but less important</li>
+    <li>I am the least important heading</li>
+
+
+</ul>
+<ul>
+    <li>Block level element</li>
+
+</ul>
+<ul>
+    <li>6 levels designating  importance, h1 through h6</li>
+</ul>
+
+<!---------------- anchor to link webpage <a>"put link title here"</a> --------------->
+
+<a href="https://www.google.com/">Google</a>
+<!-- anchor to jump to top of page #top -->
+<a href="#top">Top of the page</a>
+
+<!------------------ Tables ------------------>
+<section>
+<table>
+
+    <tr>
+        <th>Products</th>
+        <th>Price</th>
+        <th>Ingredients</th>
+    </tr>
+    <tr>
+        <td>Iced Tea</td>
+        <td>$2.99</td>
+    </tr>
+    <tr>
+        <td>Hamburger</td>
+        <td>$11.99</td>
+    </tr>
+    <td>
+        <img src="" alt="image">
+        <a href="#">Cole Usher</a>
+    </td>
+
+</table>
+    </section>
+</main>
 
 </body>
 </html>
 
 
-<!-- HTML elements -->
+<!---------------------- HTML elements ------------------------->
+    <!-- header elements -->
+        <!--<h1>I am the biggest header</h1>-->
+        <!--<h2>the second biggest</h2>-->
+        <!--<h3>one level smaller</h3>-->
+        <!--<h4>smaller than h3</h4>-->
+        <!--<h5>smaller than h4</h5>-->
+        <!--<h6>smallest header</h6>-->
+
     <!-- paragraph element -->
-    <!-- <p></p> -->
+        <!-- <p></p> -->
 
     <!-- inline element -->
-    <!-- <span></span> -->
+        <!-- <span></span> -->
 
     <!-- block element -->
-    <!-- <div></div> -->
+        <!-- <div></div> -->
 
     <!-- void elements dont need closing -->
         <!-- <br> 'break' creates a white space -->
@@ -45,5 +127,12 @@
         <!-- <input>  tag to  -->
 
     <!-- Attributes -->
-    <!-- <div (--id="wrapper"--) (--class="content"--) cant have same id in separate <div> but can have same class (can call the class to change style for multiple <div>)-->
-    <!-- to call id = #idname -- to call class = .classname -->
+         <!-- <div (--id="wrapper"--) (--class="content"--) cant have same id in other <div> but can have same class (can call the class to change style for multiple <div>)-->
+         <!-- to call id = #idname -- to call class = .classname -->
+
+    <!-- Tables -->
+        <!-- <table></table> -->
+        <!-- <th> table heading </th> -->
+        <!-- <tr> table row </tr> -->
+        <!-- <td> table data </td> -->
+
