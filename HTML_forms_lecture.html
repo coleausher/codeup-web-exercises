@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML forms lecture</title>
+</head>
+<body>
+<!-- ***Post = send info, Get = get info, action = where info is going or coming from*** -->
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <!-- ***id must match for*** -->
+    <label for="username">Username</label>
+
+<!--  ***adding a (value = 'abc') attribute after type attribute automatically sets the input in the space like a 'remember me'*** -->
+    <input id="username" name="username" type="text" value="causher">
+<br>
+<!--  ***adding a (placeholder = 'abc') attribute after type attribute puts an example in the space to show the user what to enter***  -->
+    <input name="username" type="text" placeholder="xxx-xxx-xxx">
+    <br>
+
+    <label for="password">Password</label>
+<!-- ***(type = password) makes dots to hide password vs text shows what your typing***  -->
+    <input id="password" name="password" type="password">
+<br>
+
+    <!-- ***(hidden) does not display on the page for the user but shows in the background***  -->
+    <input type="hidden" name="hidden-input" value="HELLO THERE">
+
+<!--  CHECKBOX  -->
+<!--  ***if no (value = "abc") the checkbox sends 'on' as a boolean value of checkbox on or off***  -->
+<!--  ***adding (checked) in front of type attribute will automatically check the box when user opens page***  -->
+    <label for="cheese">Cheese</label>
+    <input checked type="checkbox" name="toppings" id="cheese" value="cheese">
+    <label for="pepperoni">Pepperoni</label>
+    <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+    <label for="bacon">Bacon</label>
+    <input type="checkbox" name="toppings" id="bacon" value="bacon">
+
+<br>
+
+<!--  RANGE  -->
+    <label for="volume">Volume</label>
+    <input type="range" name="volume" id="volume">
+<br>
+
+<!--  RADIO  -->
+<!--  ***if the (name = 'abc') are the same can only select one at a time***  -->
+    <p>Favorite color:</p>
+    <label for="red">Red</label>
+    <input type="radio" name="color" id="red" value="red">
+    <label for="green">Green</label>
+    <input type="radio" name="color" id="green" value="green">
+    <label for="blue">Blue</label>
+    <input type="radio" name="color" id="blue" value="blue">
+<br>
+    
+<!-- TEXT AREA -->
+<!--  ***makes a text box / don't technically need (cols or rows)*** -->
+    <label for="email-body"></label>
+    <textarea name="email-body" id="email-body" cols="30" rows="10">This is a pre-populated text</textarea>
+<br>
+<!--  SELECT BOX  -->
+<!--  don't technically need the (value="abc") the value just sends to the DB -->
+    <label for="size">Size: </label>
+    <select name="size" id="size">
+        <option>S</option>
+        <option>M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+    </select>
+<br>
+<!--  DATE BOX  -->
+<!--  ***can add a (disabled) attribute to any input to disable the ability to click or use the attribute***  -->
+    <label for="date"></label>
+    <input type="datetime-local" id="date" name="date" disabled>
+
+<br>
+<!--  SUBMIT BUTTON  -->
+    <!-- <input type="submit"> -->
+          <!--  or  -->
+    <button type ="submit">Log in</button>
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
