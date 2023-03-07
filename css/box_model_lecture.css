@@ -1,0 +1,43 @@
+div{
+    width: 200px;
+    height: 200px;
+    /*padding-top: 50px;*/
+    /*padding-bottom: 50px;*/
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+
+    /*top, right, bottom, left*/
+    /*padding: 50px 10px 30px 50px;*/
+    /*margin: 10px;*/
+
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: bisque;
+}
+
+#one{
+    background-color: pink;
+
+}
+
+#two{
+    background-color: indianred;
+    border: 10px dashed yellow;
+/*  border: 10px;
+    border-style: dashed;
+    border-color: yellow; */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#three{
+    background-color: grey;
+}
+
+button{
+    padding: 10px;
+    margin: 10px;
+}
