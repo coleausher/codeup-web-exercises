@@ -8,3 +8,46 @@ comment
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+h1{
+    text-align: center;
+}
+
+h2{
+    color: red;
+    text-decoration: underline;
+}
+body {
+    background-color: #808080;
+    background-image: url("https://images.pexels.com/photos/68631/pexels-photo-68631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: 800px 500px;
+    background-position: center;
+    background-position: top;
+    font-family: Comic Sans MS;
+}
+
+ul{
+    list-style: square;
+}
+ol{
+    list-style: upper-roman;
+}
+
+th, td{
+    font-size: 30px;
+    padding: 10px;
+}
+
+a:link {
+    color:blue;
+}
+a:visited {
+    color:red;
+}
+a:hover {
+    color:purple;
+}
+a:active {
+    color:yellow;
+}
+
