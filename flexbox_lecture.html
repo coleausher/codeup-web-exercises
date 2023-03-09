@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox lecture</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+        .flex-container {
+            width: 500px;
+            height: 500px;
+            border: 3px solid goldenrod;
+/*display: flex; pushes everything together to put block elements and inline elements together to share a space*/
+            display: flex;
+/*flex direction tells the content inside the parent element how to organize the child elements (by default it is set to row)*/
+            flex-direction: row;
+/*justify-content property controls the horizontal positioning of elements on the **main axis***/
+/*Note: the main axis can change depending on the ***flex-direction***/
+            /*justify-content: center;*/
+/*The align-items property will determine the layout of items along the ***cross axis***/
+/*Note: the cross axis can change depending on the ***flex-direction***/
+            /*align-items: center;*/
+/*The flex-wrap property when more items are present than the container can hold it helps control how the extra items behave*/
+            flex-wrap: wrap;
+/*The align-content property when multiple rows or columns are present the spacing of the lines of items are controlled along the ***cross axis***/
+/*Note: align-content will do nothing unless the items wrap into multiple rows*/
+            align-content: flex-start;
+
+        }
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item div1">Item 1</div>
+    <div class="flex-item div2">Item 2</div>
+    <div class="flex-item div3">Item 3</div>
+    <div class="flex-item div4">Item 4</div>
+    <div class="flex-item div5">Item 5</div>
+    <div class="flex-item div6">Item 6</div>
+    <div class="flex-item div7">Item 7</div>
+    <div class="flex-item div8">Item 8</div>
+    <div class="flex-item div9">Item 9</div>
+</div>
+
+</body>
+</html>
+
+<!--flex direction: row/column/row-reverse/column-reverse-->
+
+<!--FOR flex-direction: 'row'-->
+<!--main axis is horizontal axis-->
+<!--cross axis is vertical axis-->
+
+<!--FOR flex-direction: 'column'-->
+<!--main axis is vertical axis-->
+<!--cross axis is horizontal axis-->
+
+<!--justify-content: flex-start/flex-end/center/space-between/space-around/space-evenly-->
+
+<!--align-items: flex-start; height 1em; / flex-end; height 1em; / stretch; height 1em; / center; height 1em; / baseline (only affects text);-->
+
+<!--Flex-wrap: nowrap; / wrap / wrap-reverse-->
+
+<!--align-content: flex-start; / center / space-evenly-->
+
+
+<!--These properties can be applied to each individual div/child element/item-->
+<!--The order property-->
+
+<!-- .div1 {
+       order: 3;       ** moves div1 to the 3rd place **
+       }-->
+<!-- .div2 {
+       order: 2;
+       }-->
+<!-- .div3 {
+       order: 1;      ** moves div3 to the 1st place **
+       }-->
+
+<!--align-self property cross axis alignment of an individual flex item-->
+<!--align-self: flex-start; / flex-end / center-->
+
+<!--flex-grow when items don't take up te entire parent container the grow property can allow specified items to grow to a width needed-->
+<!--flex-grow: 1 -->
+<!--flex-grow: 2 -->
