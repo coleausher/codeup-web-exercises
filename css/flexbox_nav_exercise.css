@@ -23,7 +23,7 @@ nav a {
     font-family: Verdana;
 }
 nav a:hover {
-    background: black;
+    color: blue;
 }
 * {
     box-sizing: border-box;
