@@ -1,0 +1,28 @@
+/*any screen with at least the width of 500px will have this certain styling be applied*/
+@media screen and (min-width: 500px){
+/*selectors in this body will only apply if the width of the screen is at least 500px*/
+    main{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: cyan;
+    }
+
+}
+
+/*Will define a range for our screens between 960px and 1200px (this will take presidents over more ambiguous media queries)*/
+@media screen and (min-width: 960px) and (max-width: 1200px){
+/*selectors in this body will only apply if the width of the screen is in between 960px and 1200px*/
+    main{
+        background-color: yellow;
+    }
+
+
+}
+
+/*This will apply to any screen so long as the width does not exceed 499px*/
+@media screen and (max-width: 499px){
+/*selectors in this body will only apply if the width of the screen is at less than 499px*/
+    main{
+        background-color: gray;
+    }
+}
