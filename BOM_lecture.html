@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM Lecture</title>
+</head>
+<body>
+
+<script>
+
+<!-- **** setInterval keeps running until condition is met-->
+
+  'use strict';
+
+  // this code will produce a console log every second
+  // when count >= max, the interval is cancelled, and the logging will stop
+
+  let count = 0;
+  let max = 10;
+  let interval = 1000; // interval time is in milliseconds
+
+  let intervalId = setInterval(function () {
+    if (count >= max) {
+      clearInterval(intervalId);
+      console.log('All done');
+      location.reload(); // reload page, possibly from cache
+    } else {
+      count++;
+      console.log('Repeating this line ' + count);
+    }
+  }, interval);
+
+
+
+  // ****** setTimeout only runs one time
+
+  let delay = 5000; // delay time in milliseconds
+
+  let timeoutId = setTimeout(function () {
+    alert('Here is a delayed hello!');
+
+    // redirect browser to specified webpage
+    // window.location = 'https://java.codeup.com/javascript-i/bom-and-dom/bom/';
+
+  }, delay);
+
+  // to cancel the timeout, you can call
+  // clearTimeout(timeoutId);
+  // prior to the delay expiring
+
+
+
+</script>
+
+</body>
+</html>
