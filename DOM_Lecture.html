@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Lecture</title>
+</head>
+<body>
+    <!--Each tag/class/id in HTML is a node that is able to be queried (grabbed) in JS-->
+
+
+    <form name="login">
+        <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
+        <h1>List One</h1>
+        <ul>
+            <li class="odd list-one-item">List 1, Item 1</li>
+            <li class="even list-one-item">List 1, Item 2</li>
+        </ul>
+        <h1>List Two</h1>
+        <ul>
+            <li class="odd list-two-item">List 2, Item 1</li>
+            <li class="even list-two-item">List 2, Item 2</li>
+        </ul>
+
+            <h1 id="main-heading">Hello World!</h1>
+            <div id="main-section">
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </div>
+    <a href="http://www.yahoo.com" id="search-link">Web Search</a>
+    <ul>
+        <li data-dbid="123">Item one</li>
+        <li data-dbid="234">Item two</li>
+    </ul>
+    <button id="btnToClick">Click Me</button>
+
+
+    <!-----------------LOCATING ELEMENTS----------------------->
+
+    <!--  'document' calls the entire code page, after the period (.) is the element you want to grab  -->
+    <!--  JS HAS TO BE INSIDE SCRIPT TAG  -->
+    <script>
+
+    // document.getElementById("ID NAME") grabs a node ID element
+    console.log(document.getElementById("btnToClick"));
+    console.log(document.getElementById("main-section"));
+
+
+    // document.getElementByClassName("CLASS NAME") grabs multiple nodes by the CLASS element
+    let evenElements = document.getElementsByClassName("even");
+
+    // grabs the first element inside the class [0]
+    console.log(evenElements[0]);
+
+    // for loop that logs out each iteration of the class name starting at index of 0
+    //      set           as long as       if less than, increment
+    for(let i = 0;   i < evenElements.length;        i++     ){
+        console.log(evenElements[i])
+    }
+
+    console.log(typeof evenElements) // evenElements is an object, it is a collection like an array but it's a collection of nodes making it an object
+
+    // document.getElementByTagName("TAG NAME") grabs a TAG element
+    let li = document.getElementsByTagName("li");
+    console.log(li[2])
+
+    // for loop that logs out each iteration of the tag name starting at index of 0
+
+    //      set           as long as     if less than, increment
+    for(let i = 0;       i < li.length;             i++         ){
+        console.log(li[i])
+    }
+
+
+
+
+    // ---------------------ACCESSING FORMS AND INPUTS OF THE FORMS---------------------
+
+    // Access form inputs / document (to call the entire document) .forms (call out the forms on the page) .name (call out what specific form you want to grab by the name)
+    // document.forms.name  also can grab any attribute inside the login form by .username or .password added on
+    let username = document.forms.login.username
+    console.log(username)
+    // allows us to get the value entered by the user in the forms username box
+    username.value
+
+
+
+
+    // ----------------------INNER HTML AND TEXT ACCESSIBILITY-------------------------
+    // document.getElementById(ID) to grab the element / adding .innerHTML displays the actual text or content in the element
+    let mainHeading = document.getElementById("main-heading")
+
+    // can manipulate or re-initialize the text or content by setting it equal to whatever you want
+        mainHeading.innerHTML = "Hello From Will";
+        console.log(mainHeading)
+
+
+
+
+    // ----------------------ACCESSING OR MODIFYING ATTRIBUTES-------------------------
+    // how to CHECK for attribute true/false .hasAttribute
+    let searchLink = document.getElementById("search-link");
+    console.log(searchLink.hasAttribute("class"));
+
+    // how to GET the attributes text/content .getAttribute
+    console.log(searchLink.getAttribute("href"));
+
+    // how to SET/ADD a new attribute (first argument is the attribute type , second is the attribute value (text/content)) .setAttribute
+    searchLink.setAttribute("class", "btn")
+    console.log(searchLink)
+
+    // how to UPDATE an attribute (first argument attribute type , second is the text/content) .setAttribute
+    searchLink.setAttribute("href", "https://www.wendys.com")
+
+    // how to REMOVE an attribute (specify attribute type to remove class/id/name/href) .removeAttribute
+    searchLink.removeAttribute("class")
+
+
+
+
+
+    //-----------------------ACCESSING DATA/CUSTOM ATTRIBUTES-----------------------------
+    let liTags = document.getElementsByTagName("li");
+    for (let i = 0; i < liTags.length; i++){
+        console.log(liTags[i].getAttribute("data-dbid"));
+    }
+
+
+
+
+    //-----------------------ACCESSING OR MODIFYING STYLES--------------------------------
+    //                                    specifying which h1 [0]
+    let firstH1 = document.getElementsByTagName("h1")[0];
+    // every node/element you select has the .style property you can use
+    firstH1.style.color = "red";
+
+
+    let body = document.getElementsByTagName("body")[0];
+    body.style.background = "yellow";
+
+    // let ul = document.getElementsByTagName("ul")[0];
+    // ul.style.display = "flex";
+
+    // to style all ul tags
+    let ul = document.getElementsByTagName("ul");
+    for(let i = 0; i < ul.length; i++){
+        ul[i].style.display = "flex";
+    }
+
+    //-----------------------QUERY SELECTOR--------------------------------
+    console.log(document.querySelector("h1").innerHTML);
+    console.log(document.querySelector(".even").innerHTML);
+    console.log(document.querySelector("#main-heading").innerHTML);
+
+
+    </script>
+
+
+
+
+</body>
+</html>
