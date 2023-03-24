@@ -9,24 +9,114 @@
 </head>
 <body>
 
+<!-- ----------------------------------------- jquery_exercises # 2 part 1(ID selectors) --------------------------------------- -->
+
+<!--Create content in your HTML file using at least the following elements: h1, p, ul, li, div-->
+<!--Add several attributes to your elements; you will need both id and class attributes.-->
+<!--<h1 id="code" class="class1">Codeup</h1>-->
+
+<!--<p id="hello" class="class2">Hello</p>-->
+
+<!--<ul id="uList" class="class3"></ul>-->
+
+<!--<li id="list" class="class4"></li>-->
+
+<!--<div id="div" class="class5">YO</div>-->
+
+<!-- ----------------------------------------- jquery_exercises # 2 part 2(class selectors) --------------------------------------- -->
+
+<!--Remove your custom jQuery code from previous exercises.-->
+<!--Update your code so that at least 3 different elements have the same class named codeup.-->
+
+<!--<h1 id="code" class="codeup">Codeup</h1>-->
+
+<!--<p id="hello" class="class2">Hello</p>-->
+
+<!--<ul id="codeup" class="class3">-->
+<!--    <li id="list" class="class4">item 1</li></ul>-->
+
+<!--<div id="div" class="codeup">YO</div>-->
+
+<!-- ----------------------------------------- jquery_exercises # 2 part 3(Element selectors) --------------------------------------- -->
+
+
+<h1 id="code" class="codeup">Codeup</h1>
+
+<p id="hello" class="class2">Hello</p>
+
+<ul id="uList" class="class3">
+    <li id="list" class="class4">item 1</li></ul>
+
+
+<div id="div" class="class5">YO</div>
+
+
+
 
 
 <!--JQUERY CDN-->
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 <script>
-// using JS Syntax
-// Waits for HTML page to load then fires off JS file
-// window.onload = function() {
-//     alert( 'the DOM has finished loading' );
-// }
+    // <!-- ----------------------------------------- jquery_exercises # 2 part 1(ID selectors) --------------------------------------- -->
+    // Use jQuery to select an element by the id. Alert the contents of the element.
+    // let code = $("#code");
+    // $(function() {
+    //     alert(code.text());
+    // });
 
-// using JQuery Syntax
-// Waits for HTML page to load then fires off JS file
-$(function (){
-alert("the DOM has finished loading")
-});
+    // Update the jQuery code to select and alert a different id.
+    // let p = $("#hello");
+    // $(function (){
+    //     alert(p.text())
+    // });
+
+    // <!-- ----------------------------------------- jquery_exercises # 2 part 2(class selectors) --------------------------------------- -->
+// Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+//         let border = $(".codeup").css("border", "1px solid red");
+
+    // <!-- ----------------------------------------- jquery_exercises # 2 part 3(Element selectors) --------------------------------------- -->
+
+    // Using jQuery, set the font-size of all li elements to 20px.
+let fontSize = $("li").css("font-size", "20px");
+
+    // Craft selectors that highlight all the h1, p, and li elements.
+let h1Select = $("h1").css("background", "yellow");
+let pSelect =  $("p").css("background", "yellow");
+let liSelect =  $("li").css("background", "yellow");
+
+    // Create a jQuery statement to alert the contents of your h1 element(s).
+let alerting = $("h1")
+    $(function() {
+        alert(alerting.text());
+    });
+
+    // <!-- ----------------------------------------- jquery_exercises # 2 part 4(Multiple selectors) --------------------------------------- -->
+    // Combine your selectors that highlight all the h1, p, and li elements.
+let multiple = $("h1, p, li").css("background", "purple");
+
+
 </script>
+
+
+
+
+<!--<script>-->
+
+<!-- ------------------------------------------ jquery_exercises # 1 ------------ -->
+<!--// using JS Syntax-->
+<!--// Waits for HTML page to load then fires off JS file-->
+<!--// window.onload = function() {-->
+<!--//     alert( 'the DOM has finished loading' );-->
+<!--// }-->
+
+<!--// using JQuery Syntax-->
+<!--// Waits for HTML page to load then fires off JS file-->
+<!--$(function (){-->
+<!--alert("the DOM has finished loading")-->
+<!--});-->
+
+<!--</script>-->
 
 
 </body>
