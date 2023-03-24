@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Selectors Lecture</title>
+</head>
+<body>
+<h1 id="codeup">Hello Codeup</h1>
+<h2>Example Page</h2>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h4>Lorem Ipsum</h4>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
+
+
+
+
+<!--JQuery CDN-->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+
+
+<!--JS / jQuery code in <script></script> tag inside the html page-->
+<script>
+    // <!--This is a jQuery selector using $-->
+    // $('selector')
+    // // This is a jQuery selector using jQuery keyword
+    // jQuery('selector')
+
+// ------------------------------- grabbing element by ID $("ID") ------------------------------------
+
+let h1 = $("#codeup");
+    console.log(h1)
+
+// ------------------------------- grabbing element value --------------------------------------------
+    // use html value /  the .html() displays what the content of that specific id is
+let h1Content = h1.html();
+    console.log(h1Content)
+
+// ------- grabbing element by Class Name $('.class-name') / .css("property", "value") is same as .style from before ------------
+let important = $('.important').css("background", "pink").css("color", "white");
+    console.log(important)
+
+// ----------------------- grabbing element by Element Name $('element-name') --------------------------
+let para = $("p");
+    // makes font bold by .css style selector
+    para.css("font-weight", "bold")
+    console.log(para)
+
+
+// ----------------- grabbing element by MULTIPLE selectors $(".class-name, element") ------------
+let multiple = $(".not-important, h1, h2, #codeup")
+    multiple.css("background", "yellow")
+    console.log(multiple)
+
+// ----------------------- grabbing element by the ALL TAG $("*") --------------------------
+let all = $("*")
+    console.log(all)
+
+
+</script>
+</body>
+</html>
