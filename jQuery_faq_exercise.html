@@ -66,6 +66,36 @@
 
 <button id="toggle">click me</button>
 
+
+
+
+<!--Traversing Methods Exercise-->
+<h3>BIG BEND NATIONAL PARK</h3>
+<ul>
+    <li>The park is named Big Bend after the Rio Grande River’s big bend in west Texas (The Rio Grande flows through the park).</li>
+    <li>About 118 miles of the Park border runs along the international border between the United States and Mexico.</li>
+    <li>There are some surprising geological features in the park, including sea fossils dinosaur bones, and volcanic dikes.</li>
+    <li>Big Bend has more than 1,200 species of plants, including 60 species of cactus.</li>
+</ul>
+<h3>SEQUOIA NATIONAL PARK</h3>
+<ul>
+    <li>Sequoia was the first park created to protect a living organism.</li>
+    <li>Sequoia is home to the tallest mountain in the lower 48</li>
+    <li>Sequoias are some of the largest and oldest trees in the world. </li>
+    <li>The parks have over 800 miles of trails.</li>
+</ul>
+<h3>SAN ANTONIO MISSIONS NATIONAL PARK</h3>
+<ul>
+    <li>San Antonio Missions National Historical Park is the nation’s largest collection of Spanish colonial resources.</li>
+    <li>Missions Concepción, San José, San Juan and Espada are all active Catholic parishes that hold regular services.</li>
+    <li>The missions weren't just churches in the 18th century, they were self-sustaining towns.</li>
+    <li>The current water rights for two of San Antonio's Spanish acequias, the San Juan Ditch Water Corp and the Espada Ditch Comp, were granted in 1731.</li>
+</ul>
+
+<button id="button">Click Me</button>
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script>
 
@@ -86,6 +116,32 @@
 
 
 
+//Traversing Methods Exercise
+
+let list = $("li")
+
+  $('#button').click(function() {
+
+      $('ul').each(function() {
+
+          $(this).children('li').last().css('background-color', 'yellow');
+
+      });
+  });
+
+
+  $('h3').click(function() {
+
+      $(this).next('ul').children('li').css('font-weight', 'bold');
+
+  });
+
+
+  $('li').click(function() {
+
+      $(this).parent().children('li').first().css('color', 'blue');
+
+  });
 
 </script>
 </body>
