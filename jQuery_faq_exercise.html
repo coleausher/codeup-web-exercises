@@ -64,16 +64,18 @@
     <dd>History buffs, train enthusiasts, and National Park Foundation supporters wander this Pennsylvania historic site to learn about our nation's railroad history.</dd>
 </dl>
 
-
+<button id="toggle">click me</button>
 
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script>
+
+
   let dd = $("dd")
     dd.click(function (){
         $(this).addClass("invisible")
     });
 
-    dd.click(function (){
+    $("#toggle").click(function (){
         $("dd").toggleClass("invisible")
     });
 
