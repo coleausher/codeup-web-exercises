@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Attribute Methods Lecture</title>
+    <style>
+        .content{
+            background: red;
+            color: white;
+        }
+        *{
+        background: black;
+        color: white;
+        }
+        .darkMode{
+        background: black;
+        color: white;
+        }
+    </style>
+</head>
+
+<!--HTML SECTION-->
+<body>
+<h1>Example Page</h1>
+
+<div class="centered important">
+    <h3>Notice</h3>
+    <p>This is an important message!</p>
+</div>
+
+<div class="not-important">
+    <h2>lorem ipsum</h2>
+    <p>Lorem ipsum dolor sit amet,  <span class="important">consectetur adipisicing elit. Deserunt </span>, facere iste necessitatibus quod repellat vel velit. Aliquid cumque dignissimos dolorum eum, laboriosam laborum molestiae nisi nostrum optio pariatur quod repellendus?</p>
+</div>
+    <p class="centered important">This is also very important!</p>
+    <a href="#" id="highlight-important">Click to highlight important text</a>
+<button type="button" id="drkMode" class="darkMode">dark mode</button>
+
+
+
+
+
+
+<!--JS SECTION-->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+<script>
+    let h1 = $("h1");
+// --------------------------------------------------- HTML Method -----------------------------------------------------
+// if there is no argument passed in the html method then the content of the selector will be retrieved
+    // $("h1").html();
+
+// if there is an argument then..... the current html content will be replaced by the argument passed in
+    h1.html("attributes and css lecture")
+
+    // h1.click(function (){
+    //     alert($(this).html());
+    // });
+
+// --------------------------------------------------- CSS Method ------------------------------------------------------
+
+//Method chaining .css().css()
+    // $(".important").css("background", "red").css("color", "white");
+
+//Another way for styling
+    // $(".important").css({
+    //     "background": "red",
+    //     "color": "white"
+    // });
+
+//Another way for styling
+    // let importantStyling = {
+    //     "background": "red",
+    //     "color": "white"
+    // }
+    // $(".important").css(importantStyling)
+
+
+// --------------------------------------------------- ADD Class Method ------------------------------------------------
+    let para = $("p");
+    // styling is in <style> tag on top  of page
+    // when chaining the add class method the original selector must be a element
+// the click , this only applies the styling to the p tag that is clicked on // .hover or .mouseover instead of .click does the styling when hovered over p tag
+//     para.hover(function (){
+//     $(this).addClass("content")
+//         });
+
+
+// --------------------------------------------------- REMOVE Class Method ---------------------------------------------
+//     para.mouseleave(function (){
+//         $(this).removeClass("content")
+//     });
+
+// --------------------------------------------------- TOGGLE Class Method ---------------------------------------------
+//     .toggleClass(class) turns on and off the styling when clicked on if .click method is used
+    para.click(function (){
+        $(this).toggleClass("content")
+    });
+
+    $("#drkMode").click(function(){
+        $("*").toggleClass(".darkMode")
+    })
+
+
+</script>
+</body>
+</html>
