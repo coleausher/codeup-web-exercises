@@ -58,6 +58,27 @@
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 <script>
+    // <!-- ----------------------------------------- jquery_exercises # 3 (Mouse events)--------------------------------------- -->
+    let background = $("h1");
+    background.click(function (){
+        $(this).css("background", "yellow")
+    });
+
+    let para = $("p");
+    para.dblclick(function (){
+        $(para).css("font-size", "18px")
+    })
+ let list = $("li");
+    list.mouseover(function(){
+        $(list).css("color", "red")
+    });
+    list.mouseleave(function(){
+        $(list).css("color", "black")
+    })
+
+
+
+
     // <!-- ----------------------------------------- jquery_exercises # 2 part 1(ID selectors) --------------------------------------- -->
     // Use jQuery to select an element by the id. Alert the contents of the element.
     // let code = $("#code");
@@ -78,22 +99,22 @@
     // <!-- ----------------------------------------- jquery_exercises # 2 part 3(Element selectors) --------------------------------------- -->
 
     // Using jQuery, set the font-size of all li elements to 20px.
-let fontSize = $("li").css("font-size", "20px");
+// let fontSize = $("li").css("font-size", "20px");
 
     // Craft selectors that highlight all the h1, p, and li elements.
-let h1Select = $("h1").css("background", "yellow");
-let pSelect =  $("p").css("background", "yellow");
-let liSelect =  $("li").css("background", "yellow");
+// let h1Select = $("h1").css("background", "yellow");
+// let pSelect =  $("p").css("background", "yellow");
+// let liSelect =  $("li").css("background", "yellow");
 
     // Create a jQuery statement to alert the contents of your h1 element(s).
-let alerting = $("h1")
-    $(function() {
-        alert(alerting.text());
-    });
+// let alerting = $("h1")
+//     $(function() {
+//         alert(alerting.text());
+//     });
 
     // <!-- ----------------------------------------- jquery_exercises # 2 part 4(Multiple selectors) --------------------------------------- -->
     // Combine your selectors that highlight all the h1, p, and li elements.
-let multiple = $("h1, p, li").css("background", "purple");
+// let multiple = $("h1, p, li").css("background", "purple");
 
 
 </script>
