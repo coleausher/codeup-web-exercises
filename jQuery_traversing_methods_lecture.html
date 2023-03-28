@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Traversing Methods Lecture</title>
+</head>
+<body>
+
+<ul>
+    <li>Linux</li>
+    <li>Apache</li>
+    <li>MySQL</li>
+    <li>PHP</li>
+    <li>Javascript</li>
+</ul>
+<h1 id="national-parks-heading">National Parks</h1>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>arches</li>
+    <li>MySQL</li>
+    <li>PHP</li>
+    <li>Javascript</li>
+</ul>
+<h1>Texas State Parks</h1>
+<ul id="texas-parks">
+    <li>Linux</li>
+    <li>Apache</li>
+    <li>MySQL</li>
+    <li>PHP</li>
+    <li>Javascript</li>
+</ul>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script>
+
+    let li = $("li")
+// ----------------------------------------- EACH function ------------------------------------------------------
+//     li.each(function (index, element){
+//         console.log(index)
+//         console.log(element)
+//         if(index % 2 === 0) {
+//             $(this).css("background", "yellow")
+//         }
+//     });
+
+// ----------------------------------------- FIRST and LAST function --------------------------------------------------
+// first method will return the first element within your collection of jquery objects (nodes)
+// console.log(li.first().html());
+
+// last method will return the last element within your collection of jquery objects (nodes)
+// console.log(li.last().html());
+
+// ----------------------------------------- CHILD function --------------------------------------------------
+//
+//     li.css("font-weight", "bold")
+//     $("#national-parks").children().css("font-weight", "bold")
+
+// ----------------------------------------- PARENT function --------------------------------------------------
+//     $("li").css("font-weight", "bold")
+//     $("li").parent().css("background", "blue")
+
+// ----------------------------------------- NEXT function --------------------------------------------------
+// .next grabs the item after whatever is specified and apply the style to the next element
+    $("#national-parks-heading").next().css("background", "salmon")
+
+</script>
+</body>
+</html>
