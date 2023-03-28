@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery FAQ Exercise</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>US National Parks FAQ</h1>
+
+<dl>
+    <dt>Abraham Lincoln Birthplace
+        National Historical Park</dt>
+    <dd>Situated in rural central Kentucky, the Abraham Lincoln Birthplace National Historical Park is the first memorial to honor our 16th president.</dd>
+
+    <dt>Acadia National Park</dt>
+    <dd>The first national park east of the Mississippi River, Acadia National Park offers hiking, biking, camping, breathtaking views of jagged coastlines, and pristine lakes.</dd>
+
+    <dt>Adams National Historical Park</dt>
+    <dd>Learn about America's history through the eyes of John Adams and his family.
+        Opportunity abounds for history and nature buffs alike at this Massachusetts park.</dd>
+
+    <dt>African American Civil War
+        Memorial</dt>
+    <dd>Remember and honor the African-American soldiers and sailors of the Civil War at this historic memorial in Washington, D.C.</dd>
+
+    <dt>African Burial Ground National
+        Monument</dt>
+    <dd>This monument in Manhattan honors
+        African Americans and offers an education on the hardship they endured in early
+        America.</dd>
+
+    <dt>Agate Fossil Beds National
+        Monument</dt>
+    <dd>Located in the northwest corner of Nebraska, Agate Fossil Beds National Monument features Miocene-age rocks containing an excellent fossil record.</dd>
+
+    <dt>Ala Kahakai National Historic
+        Trail</dt>
+    <dd>Established in 2000 for the preservation, protection, and interpretation of traditional Native Hawaiian culture and natural resources, Ala Kahakai offers visitors a trail network of cultural and historical significance to explore.</dd>
+
+    <dt>Alagnak Wild River</dt>
+    <dd>Whitewater rafting in Class I-IlI rapids, kayaking, fishing, and floating are some of the activities enjoyed by adventure-seekers on vacation in Alaska.</dd>
+
+    <dt>Alcatraz Island</dt>
+    <dd>Come to Alcatraz for a prison tour while enjoying the historical and cultural experiences unique to the San Francisco
+        Bay.</dd>
+
+    <dt>Alibates Flint Ouarries National
+        Monument</dt>
+    <dd>Alibates Flint Ouarries National Monument is protected by the National Park Service and is the only National Monument in Texas.</dd>
+
+    <dt>Allegheny Portage Railroad
+        National Historic Site</dt>
+    <dd>History buffs, train enthusiasts, and National Park Foundation supporters wander this Pennsylvania historic site to learn about our nation's railroad history.</dd>
+</dl>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script>
+  let dd = $("dd")
+    dd.click(function (){
+        $(this).addClass("invisible")
+    });
+
+    dd.click(function (){
+        $("dd").toggleClass("invisible")
+    });
+
+    let dt = $("dt")
+  dt.click(function (){
+      $(this).addClass("highlight")
+  });
+
+
+
+
+</script>
+</body>
+</html>
