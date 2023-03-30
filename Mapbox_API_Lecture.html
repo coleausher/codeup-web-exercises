@@ -80,29 +80,34 @@ let popup = new mapboxgl.Popup()
     marker.setPopup(popup);
 
 // ---------------------------------------------- Mapbox gl Geocoder ---------------------------------------------------
-document.getElementById("submit").addEventListener("click", function (){
+document.getElementById("submit").addEventListener("click", function () {
 
 // geocoder function will return a promise, this promise has our location
     let currentLocation = geocode(document.getElementById("search").value, MAPBOX_TOKEN)
 
     // use the .then function to retrieve the information from your promise
-    currentLocation.then(function (results){
+    currentLocation.then(function (results) {
         // log out my results(the data within my promise)
         console.log(results)
+        map.setCenter([results[0], results[1]])
+    })
+})
         // we set data equal to center of our map
-        new mapboxgl.Map({
-            // this setting location of map depending on the id in my html
-            container: 'map', // container ID
-            // this setting mapboxgl styling
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            // this decides how zoomed in my map is
-            zoom: 10, // starting zoom
-            // this adds the center to my map
-            // take long and lat for our results and set a new center
-            center: [results[0], results[1]]
-        });
-    });
-});
+//         new mapboxgl.Map({
+//             // this setting location of map depending on the id in my html
+//             container: 'map', // container ID
+//             // this setting mapboxgl styling
+//             style: 'mapbox://styles/mapbox/streets-v11', // style URL
+//             // this decides how zoomed in my map is
+//             zoom: 10, // starting zoom
+//             // this adds the center to my map
+//             // take long and lat for our results and set a new center
+//             center: [results[0], results[1]]
+//         });
+//     });
+// });
+
+
 // ---------------------------------------------- Mapbox gl Geocoder ---------------------------------------------------
 
 </script>
