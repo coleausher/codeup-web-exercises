@@ -89,26 +89,19 @@ document.getElementById("submit").addEventListener("click", function () {
     currentLocation.then(function (results) {
         // log out my results(the data within my promise)
         console.log(results)
+        // we set data equal to center of our map
         map.setCenter([results[0], results[1]])
     })
 })
-        // we set data equal to center of our map
-//         new mapboxgl.Map({
-//             // this setting location of map depending on the id in my html
-//             container: 'map', // container ID
-//             // this setting mapboxgl styling
-//             style: 'mapbox://styles/mapbox/streets-v11', // style URL
-//             // this decides how zoomed in my map is
-//             zoom: 10, // starting zoom
-//             // this adds the center to my map
-//             // take long and lat for our results and set a new center
-//             center: [results[0], results[1]]
-//         });
-//     });
-// });
 
 
-// ---------------------------------------------- Mapbox gl Geocoder ---------------------------------------------------
+
+// ---------------------------------------------- Mapbox gl Reverse Geocoder --------------------------------------------
+reverseGeocode([-96.7970, 32.7767], MAPBOX_TOKEN).then(function (results){
+    console.log(results)
+})
+
+
 
 </script>
 </body>
