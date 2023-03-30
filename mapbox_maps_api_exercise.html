@@ -7,6 +7,8 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
     <!-- Mapbox CSS -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="js/jquery-3.6.4.min.js">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
 <style>
     #map {
@@ -147,8 +149,8 @@
  // make a function to hide the markers when the button is clicked
     let hideMarkers = document.getElementById("hide")
     hideMarkers.addEventListener("click", function (){
-
-    })
+        $(".mapboxgl-marker").toggle()
+    });
 
 
 
