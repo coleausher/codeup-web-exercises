@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox JS (got both of these from https://docs.mapbox.com/mapbox-gl-js/guides/install/#quickstart)-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+
+<style>
+    #map {
+        /* the width and height may be set to any size */
+        width: 100%;
+        height: 700px;
+    }
+
+</style>
+
+
+
+</head>
+<body>
+<h1>My First Mapbox Map!</h1>
+<a href="https://docs.mapbox.com/mapbox-gl-js/api/map/#map#boxzoom">List of properties/styles to use for map</a>
+
+<div id='map'></div>
+<input id="search">
+<label for="search">SEARCH</label>
+
+<!--script to link the keys.js file with the API token, needs to be before the script tag rendering the map-->
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder.js"></script>
+<button id="submit" type="button">search</button>
+
+<!-- Custom JS -->
+<script>
+
+
+// ---------------------------------------------- Mapbox gl Map -----------------------------------------------------
+<!--  MAPBOX_TOKEN is specified in the keys.js file which is equal to my token  -->
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    let map = new mapboxgl.Map({
+        // this setting location of map depending on the id in my html
+        container: 'map', // container ID
+        // this setting mapboxgl styling
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        // this decides how zoomed in my map is
+        zoom: 10, // starting zoom
+        // this adds the center to my map
+        center: [-96.7970, 32.7767] // [longitude, latitude] of where you want the map to load as the starting point
+
+    });
+
+
+// Customizing the Map (setting the Style, Center, Zoom)
+// .setZoom() changes the starting zoom level (lower the number the farther it zooms out)
+//     map.setZoom(4)
+
+
+// ---------------------------------------------- Mapbox gl Marker -----------------------------------------------------
+// setting a marker object
+let marker = new mapboxgl.Marker()
+    // setting marker object location
+    .setLngLat([-96.7970, 32.7767])
+    // adding marker to map
+    .addTo(map)
+
+
+// ---------------------------------------------- Mapbox gl Popup -----------------------------------------------------
+    // setting popup object
+let popup = new mapboxgl.Popup()
+    // setting location of popup
+    .setLngLat([-96.7970, 32.7767])
+    // setting the content of my popup
+    .setHTML("<h1>Dallas</h1>")
+    // adding popup to map
+    // this sets up popup on marker, the popup will only appear when marker is clicked on
+    marker.setPopup(popup);
+
+// ---------------------------------------------- Mapbox gl Geocoder ---------------------------------------------------
+document.getElementById("submit").addEventListener("click", function (){
+
+// geocoder function will return a promise, this promise has our location
+    let currentLocation = geocode(document.getElementById("search").value, MAPBOX_TOKEN)
+
+    // use the .then function to retrieve the information from your promise
+    currentLocation.then(function (results){
+        // log out my results(the data within my promise)
+        console.log(results)
+        // we set data equal to center of our map
+        new mapboxgl.Map({
+            // this setting location of map depending on the id in my html
+            container: 'map', // container ID
+            // this setting mapboxgl styling
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            // this decides how zoomed in my map is
+            zoom: 10, // starting zoom
+            // this adds the center to my map
+            // take long and lat for our results and set a new center
+            center: [results[0], results[1]]
+        });
+    });
+});
+// ---------------------------------------------- Mapbox gl Geocoder ---------------------------------------------------
+
+</script>
+</body>
+</html>
