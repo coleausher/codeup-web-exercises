@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map Lecture</title>
+    <!-- Mapbox JS (got both of these from https://docs.mapbox.com/mapbox-gl-js/guides/install/#quickstart)-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<script src="js/keys.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder.js"></script>
+
+
+<script>
+    <!--  MAPBOX_TOKEN is specified in the keys.js file which is equal to my token  -->
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    let map = new mapboxgl.Map({
+        // this setting location of map depending on the id in my html
+        container: 'map', // container ID
+        // this setting mapboxgl styling
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        // this decides how zoomed in my map is
+        zoom: 10, // starting zoom
+        // this adds the center to my map
+        center: [-96.7970, 32.7767] // [longitude, latitude] of where you want the map to load as the starting point
+
+    });
+
+
+
+
+    $.get("https://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        q:     "San Antonio, US",
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+        console.log(data.list);
+
+        for(let i = 0; i <= 39; i+=8){
+            console.log(data.list[i])
+        }
+        // same as for loop
+        // console.log(data.list[0]);
+        // console.log(data.list[8]);
+        // console.log(data.list[16]);
+        // console.log(data.list[24]);
+        // console.log(data.list[32]);
+
+    });
+
+
+</script>
+
+</body>
+</html>
+
+
+
+// Define weatherData as an empty array
+let weatherData = [];
+
+// Retrieve weather data for the next five days
+$.get("https://api.openweathermap.org/data/2.5/forecast", {
+APPID: OPEN_WEATHER_APPID,
+q:     "Haslet, US",
+units: "imperial"
+}).done(function(data) {
+// Iterate through each day's weather data and add it to weatherData
+for (let i = 0; i < 40; i+=8) {
+console.log(data.list[i])
+const dayData = data.list[i]; // Get data for 9pm each day
+const date = (dayData.dt_txt.substring(0, 10));
+// const temp = dayData.main.temp_min;
+const temp = dayData.main.temp_max + " / " + dayData.main.temp_min; // Temperature in Fahrenheit
+const description = dayData.weather[0].description;
+const humidity = dayData.main.humidity;
+const wind = dayData.wind.speed;
+const pressure = dayData.main.pressure;
+const icon = dayData.weather[0].icon;
+
+
+// Add the day's weather data to the weatherData array
+weatherData.push({date, temp, description, humidity, wind, pressure, icon});
+}
+
+// Loop through each day's weather data and update the corresponding card
+for (let i = 0; i < weatherData.length; i++) {
+const day = weatherData[i];
+const date = day.date;
+const temp = day.temp + '°F'; // Add degree symbol to temperature
+const description = day.description;
+const humidity = 'Humidity: ' + day.humidity + '%';
+const wind = 'Wind: ' + day.wind + ' mph';
+const pressure = 'Pressure: ' + day.pressure + ' in';
+const icon = day.icon;
+
+// Update the HTML for the card
+const $card = $('.card' + (i + 1));
+$card.find('.head' + (i + 1)).text(date);
+$card.find('.temp').text(temp);
+$card.find('.description').text('DESCRIPTION: ' + description);
+$card.find('.humidity').text(humidity);
+$card.find('.wind').text(wind);
+$card.find('.pressure').text(pressure);
+}
+});
