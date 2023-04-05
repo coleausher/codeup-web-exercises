@@ -10,17 +10,17 @@
         "title": "Drill",
         "quantity": 5,
         "categories": [
-            "tool",
-            "powered"
+            "tool ",
+            " powered"
         ],
         "price": 100
     }, {
         "title": "Mower",
         "quantity": 5,
         "categories": [
-            "tool",
-            "gas",
-            "outdoor"
+            " tool ",
+            "  gas",
+            " outdoor "
         ],
         "price": 200
     }, {
@@ -30,5 +30,21 @@
             "tool"
         ],
         "price": 10
+    },
+    {
+        "title": "Shop Vac",
+        "quantity": 10,
+        "categories": [
+            "tool"
+        ],
+        "price": 50
+    },
+    {
+        "title": "Air compressor",
+        "quantity": 10,
+        "categories": [
+            "tool"
+        ],
+        "price": 400
     }
 ]
