@@ -246,12 +246,16 @@ $("#search-btn").click(function () {
                         "<p>Description: " + data.list[i].weather[0].description + "</p>" +
                         "<p>Humidity: " + data.list[i].main.humidity + "%" + "<hr class='HR'>" +
                         "<p>Wind: " + data.list[i].wind.speed + " mph</p></div>");
+
+
                 }
+                $('#weather').html(html)
+                $('#current-location').html(data.location.name)
             });
+
         });
     }
 });
-
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
