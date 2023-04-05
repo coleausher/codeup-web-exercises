@@ -16,10 +16,25 @@
 
 
     <style>
+        .location{
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        .geocoder{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
         #search-btn{
-            border-radius: 20px;
+            border-radius: 10px;
             background: red;
             color: white;
+            margin-left: 10px;
+        }
+        #search-box{
+            width: 50%;
+            height: 40px;
         }
         .background{
             background-image: url("img/forecast.jpeg");
@@ -87,7 +102,7 @@
 <!--NAVBAR HERE-->
 <nav class="navbar" style="background-color: red;">
  <h3 style="color: white">Weather App</h3>
-    <p class="current-city" style="color: white">Current city: <span id="current-location"></span></p>
+    <p class="current-city" style="color: white"> <span id="current-location"></span></p>
 </nav>
 <div class="background">
 <br>
@@ -100,6 +115,8 @@
 </div>
 
 <br>
+
+    <h3 class="location" id="location-head"></h3>
 
 <!--WEATHER CARDS HERE-->
 <div id="weather"></div>
@@ -132,6 +149,9 @@ map = new mapboxgl.Map({
     center: [-97.3478, 32.9748]
 });
 
+
+
+
 // when page loads auto set marker to my home location
 map.on("load", function (){
     marker.setLngLat([-97.3478, 32.9748]).addTo(map)
@@ -148,6 +168,7 @@ $.get("https://api.openweathermap.org/data/2.5/forecast", {
 
     // loop over the forecast data and create a card for each day
     for (let i = 0; i < 40; i += 8) {
+        console.log(data.list[i])
         $('#weather').append("<div class='weatherCards'><p class='date'>" + data.list[i].dt_txt.substring(0, 10) + "</p>" +
             "<p>" + data.list[i].main.temp_min + " °F" + " / " + data.list[i].main.temp_max + " °F" + "</p>" +
             "<img src='http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png'>" +
@@ -211,6 +232,7 @@ function geocoder() {
     });
 }
 $("#search-btn").click(function () {
+    // alert("Lets see whats happening in your neck of the woods!")
     let searchQuery = $("#search-box").val();
     if (searchQuery.length > 0) {
         // use the mapbox to get the coordinates of the location
@@ -226,6 +248,12 @@ $("#search-btn").click(function () {
             // set the map center and marker location to the new location
             map.setCenter([longitude, latitude]);
             marker.setLngLat([longitude, latitude]).addTo(map);
+
+
+
+
+
+
 
             // use the OpenWeather API to get the forecast for the new location
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
@@ -245,17 +273,16 @@ $("#search-btn").click(function () {
                         "<hr class='HR'>" +
                         "<p>Description: " + data.list[i].weather[0].description + "</p>" +
                         "<p>Humidity: " + data.list[i].main.humidity + "%" + "<hr class='HR'>" +
-                        "<p>Wind: " + data.list[i].wind.speed + " mph</p></div>");
-
-
+                        "<p>Wind: " + data.list[i].wind.speed +  " mph" + "<hr class='HR'>" + "</p>" +
+                        "<p>Pressure: " + data.list[i].main.pressure + " Hg" + "</p>")
                 }
-                $('#weather').html(html)
-                $('#current-location').html(data.location.name)
+
             });
 
         });
     }
 });
+
 
 </script>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
