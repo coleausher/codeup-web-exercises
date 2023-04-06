@@ -58,10 +58,6 @@
                         $('#posts').append(postHtml);
                     });
                 },
-                error: function (xhr, status, error) {
-                    // If there's an error loading the data, log it to the console
-                    console.log("Error loading blog posts: " + error);
-                }
             });
         }
     });
