@@ -17,5 +17,16 @@
       "sugar"
     ],
     "date": "February 14, 2015"
+  },
+  {
+    "title": "The Third Post",
+    "content": "The gentle giant of the sea, the blue whale is instantly recognisable with a long, streamlined shape, mottled blue or grey back and pale underbelly. They each have huge heads that are broad, long and have a unique U-shaped arch, and can reach up to a quarter of their body lengths in size. Famous for their sheer mass, blue whales glide effortlessly through the ocean, dwarfing all else in their path. Commanding awe, they grow to over 33 meters long (around 100ft) – twice as along as a T-Rex dinosaur. Even their calves are a whopping 7 meters in length, weighing in the same as an adult African elephant.",
+    "categories": [
+      "water",
+      "ocean",
+      "animal"
+    ],
+    "date": "May 24, 2000"
   }
+
 ]
